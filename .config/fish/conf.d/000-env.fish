@@ -8,4 +8,10 @@ if status --is-login
     
     # Add stuff to your PATH
     set PATH $HOME/.local/bin $PATH
+    if test -d $HOME/.local
+        mdkir $HOME/.local
+    end
+    if test -d $HOME/.local/bin
+        mkdir $HOME/.local/bin
+    end
 end
