@@ -3,4 +3,5 @@ if status --is-login; and status --is-interactive
         curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
                 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     end
+    vim -c \'silent! PlugInstall\' -c \'qa\'
 end
