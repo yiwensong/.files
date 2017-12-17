@@ -7,5 +7,5 @@ if status --is-login
     # set EDITOR "emacs"
     
     # Add stuff to your PATH
-    set PATH $PATH
+    set PATH $HOME/.local/bin $PATH
 end
