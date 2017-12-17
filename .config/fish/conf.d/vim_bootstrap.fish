@@ -4,4 +4,6 @@ if status --is-login; and status --is-interactive
                 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     end
     vim -c \'silent! PlugInstall\' -c \'qa\'
+    cd ~/.vim/plugged/YouCompleteMe/
+    ./install.py
 end
