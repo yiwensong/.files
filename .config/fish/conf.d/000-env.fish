@@ -14,4 +14,7 @@ if status --is-login
     if test -d $HOME/.local/bin
         mkdir $HOME/.local/bin
     end
+    if test -d $HOME/.local/data
+        mkdir $HOME/.local/bin
+    end
 end
