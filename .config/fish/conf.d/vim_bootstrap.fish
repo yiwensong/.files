@@ -1,11 +1,14 @@
 function _install_ycm
     set WORKDIR (pwd)
-    cd $HOME/.local/data
-    curl -fLo $HOME/.local/data https://cmake.org/files/v3.10/cmake-3.10.1.tar.gz
-    cd cmake-3.10.1
+    if not test -d $HOME/.local/data
+      mkdir $HOME/.local/data
+    end
+    curl -fLo $HOME/.local/data/cmake-3.10.1.tar.gz https://cmake.org/files/v3.10/cmake-3.10.1.tar.gz
+    cd $HOME/.local/data/
+    tar -xvf cmake-3.10.1.tar.gz
+    cd $HOME/.local/data/cmake-3.10.1
     ./bootstrap --prefix $HOME/.local/bin ; and make ; and make install
-    cd $HOME/.vim/plugged/YouCompleteMe/
-    ./install.py
+    eval $HOME/.vim/plugged/YouCompleteMe/install.py
     cd $WORKDIR
 end
 
@@ -19,7 +22,7 @@ if status --is-login; and status --is-interactive
     else
         set YCM_NEEDS_INSTALL 0
     end
-    vim -c \'silent! PlugInstall\' -c \'qa\'
+    eval vim -c \'silent! PlugInstall\' -c \'qa\'
     if test $YCM_NEEDS_INSTALL = "1"
         _install_ycm
     end

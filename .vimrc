@@ -22,7 +22,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'nvie/vim-flake8'
 " YouCompleteMe must be manually installed
 Plug 'Valloric/YouCompleteMe'
-Plug 'lifepillar/vim-solarized8'
+Plug 'altercation/vim-colors-solarized'
 Plug 'AndrewRadev/splitjoin.vim'
 
 call plug#end()
