@@ -1,3 +1,14 @@
+function _install_ycm
+    set WORKDIR (pwd)
+    cd $HOME/.local/data
+    curl -fLo $HOME/.local/data https://cmake.org/files/v3.10/cmake-3.10.1.tar.gz
+    cd cmake-3.10.1
+    ./bootstrap --prefix $HOME/.local/bin ; and make ; and make install
+    cd $HOME/.vim/plugged/YouCompleteMe/
+    ./install.py
+    cd $WORKDIR
+end
+
 if status --is-login; and status --is-interactive
     if not test -e ~/.vim/autoload/plug.vim
         curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -10,13 +21,7 @@ if status --is-login; and status --is-interactive
     end
     vim -c \'silent! PlugInstall\' -c \'qa\'
     if test $YCM_NEEDS_INSTALL = "1"
-        cd $HOME/.local/data
-        curl -fLo $HOME/.local/data https://cmake.org/files/v3.10/cmake-3.10.1.tar.gz
-        cd cmake-3.10.1
-        ./bootstrap --prefix $HOME/.local/bin ; and make ; and make install
-        cd $HOME/.vim/plugged/YouCompleteMe/
-        ./install.py
-        cd $HOME
+        _install_ycm
     end
     if not test -d ~/.vim/undo
         mkdir ~/.vim/undo
