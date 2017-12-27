@@ -7,7 +7,7 @@ function _install_ycm
     cd $HOME/.local/data/
     tar -xvf cmake-3.10.1.tar.gz
     cd $HOME/.local/data/cmake-3.10.1
-    ./bootstrap --prefix $HOME/.local/bin ; and make ; and make install
+    ./bootstrap --prefix=$HOME/.local/bin ; and make ; and make install
     eval $HOME/.vim/plugged/YouCompleteMe/install.py
     cd $WORKDIR
 end
