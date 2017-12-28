@@ -24,6 +24,7 @@ Plug 'nvie/vim-flake8'
 Plug 'Valloric/YouCompleteMe'
 Plug 'altercation/vim-colors-solarized'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
