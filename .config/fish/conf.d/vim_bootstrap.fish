@@ -22,7 +22,9 @@ if status --is-login; and status --is-interactive
     else
         set YCM_NEEDS_INSTALL 0
     end
-    eval vim -c \'silent! PlugInstall\' -c \'qa\'
+    if not test -d ~/.vim/plugged
+        eval vim -c \'silent! PlugInstall\' -c \'qa\'
+    end
     if test $YCM_NEEDS_INSTALL = "1"
         _install_ycm
     end

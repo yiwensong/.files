@@ -25,6 +25,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'altercation/vim-colors-solarized'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-rooter'
 
 call plug#end()
 
