@@ -9,6 +9,6 @@ if status --is-login; and status --is-interactive
 
     set SSH_IDS gcloud_rsa id_rsa yiws
     for id in $SSH_IDS
-        ssh-add ~/.ssh/$id
+        ssh-add $HOME/.ssh/$id > /dev/null 2> /dev/null
     end
 end
