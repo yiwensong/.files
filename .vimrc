@@ -134,6 +134,7 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader><S-w> :wa<CR>
 nnoremap <Leader><S-q> :qa<CR>
+nnoremap <Leader>e :e<Space>
 
 " Leader jumping buffers
 nnoremap <Leader>1 :b1<CR>
