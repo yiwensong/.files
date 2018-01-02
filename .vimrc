@@ -131,9 +131,9 @@ nnoremap <S-Tab> :bprev<CR>
 
 " Use leader for stuff
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :wq<CR>
+nnoremap <Leader>q :q<CR>
 nnoremap <Leader><S-w> :wa<CR>
-nnoremap <Leader><S-q> :wqa<CR>
+nnoremap <Leader><S-q> :qa<CR>
 
 " Leader jumping buffers
 nnoremap <Leader>1 :b1<CR>
