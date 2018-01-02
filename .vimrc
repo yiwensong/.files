@@ -128,6 +128,7 @@ nnoremap k gk
 " Use tab and shift tab to switch between buffers
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprev<CR>
+noremap <Leader>bd :bn <bar> bd #<CR>
 
 " Use leader for stuff
 nnoremap <Leader>w :w<CR>
@@ -150,6 +151,11 @@ nnoremap <Leader>0 :b10<CR>
 
 " Map semicolon to colon because it's easier to hit
 nnoremap ; :
+
+" FZF
+nnoremap <Leader>f :<C-u>GFiles<CR>
+nnoremap <Leader>p :<C-u>FZF<CR>
+nnoremap <Leader>b :<C-u>Buffers<CR>
 
 " Don't use first or last 3 lines of screen to edit
 set scrolloff=3
