@@ -15,9 +15,20 @@ abbr --add netstat  'netstat --listening --program --numeric'
 abbr --add jq       'jq -C -S'
 abbr --add ls       'ls -ahl'
 abbr --add ssh      'ssh -A'
+abbr --add python   'python3'
+
+# Git abbrs
+abbr --add gstatus  'git status'
+abbr --add gs       'git status'
+abbr --add gdiff    'git diff'
+abbr --add gpush    'git push'
+abbr --add gpom     'git push origin master'
 abbr --add gpull    'git pull --rebase'
 abbr --add gclone   'git clone'
-abbr --add python   'python3'
+abbr --add gc       'git clone'
+abbr --add gcom     'git commit -m'
+abbr --add gca      'git commit -am'
+abbr --add gb       'git blame'
 
 set local_functions (dirname (status --current-filename))/abbr_local.fish
 if test -e $local_functions
