@@ -18,6 +18,7 @@ abbr --add ssh      'ssh -A'
 abbr --add python   'python3'
 
 # Git abbrs
+abbr --add glog     'git log'
 abbr --add gstatus  'git status'
 abbr --add gs       'git status'
 abbr --add gdiff    'git diff'
