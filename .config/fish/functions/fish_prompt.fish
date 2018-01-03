@@ -29,7 +29,7 @@ function fish_prompt
     set tstamp "$snorm"(date +%H:%M:%S)"$snorm"
     set path "$sbryl"(prompt_pwd)"$snorm"
 
-    printf "%s[%s%s🌮 %s %s%s] %s%s%s\n%s" $sblue $user $sblue $host $tstamp $sblue $path $snorm
+    printf "%s[%s%s is a big l s r 🌮 %s %s%s hi %s] %s%s%s\n%s" $sblue $user $sblue $host $tstamp $sblue $user $path $snorm
     if test $__prompt_status -ne 0
         __fail_emoji
     else
