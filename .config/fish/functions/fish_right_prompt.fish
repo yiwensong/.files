@@ -5,7 +5,7 @@ function fish_right_prompt -d "write right prompt"
     if test -n "$is_git_repository"
 
         if test (git stash list | wc -l) -gt 0
-            echo -n "🎁  "
+            echo -n "🥑  "
         end
 
         git rev-parse --abbrev-ref '@{upstream}' >/dev/null 2>/dev/null; and set -l has_upstream
@@ -23,15 +23,15 @@ function fish_right_prompt -d "write right prompt"
         git diff-index --quiet --ignore-submodules --cached HEAD 2>/dev/null; or set -l has_staged_files
 
         set_color brwhite
-        echo -n "🎄 "$branch" "
+        echo -n "🌲 "$branch" "
         set_color normal
 
         if set -q has_unstaged_files
-            echo -n "📕 "
+            echo -n "😡 "
         else if set -q has_staged_files
-            echo -n "📙 "
+            echo -n "🤔 "
         else
-            echo -n "📗 "
+            echo -n "😎 "
         end
     end
 
