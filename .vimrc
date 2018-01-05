@@ -11,6 +11,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-rooter'
+Plug 'wting/cheetah.vim'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -93,6 +95,7 @@ set autoindent
 " Do not change 'tabstop' from its default value of 8 with this setup.
 set shiftwidth=4
 set softtabstop=4
+set tabstop=4
 set expandtab
 
 "---------------------------------------------------------------------------
@@ -146,8 +149,7 @@ nnoremap <Leader>5 :b5<CR>
 nnoremap <Leader>6 :b6<CR>
 nnoremap <Leader>7 :b7<CR>
 nnoremap <Leader>8 :b8<CR>
-nnoremap <Leader>9 :b9<CR>
-nnoremap <Leader>0 :b10<CR>
+nnoremap <Leader>9 :blast<CR>
 
 " Map semicolon to colon because it's easier to hit
 nnoremap ; :
@@ -184,3 +186,10 @@ colorscheme solarized
 " fzf plugin
 set rtp+=~/.fzf
 
+
+"---------------------------------------------------------------------------
+
+" IndentLine Settings
+let g:indentLine_enabled = 0
+nnoremap <Leader>i :IndentLinesEnable<CR>
+nnoremap <Leader><S-i> :IndentLinesDisable<CR>
