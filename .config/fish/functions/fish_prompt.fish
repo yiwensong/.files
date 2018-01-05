@@ -9,18 +9,18 @@ function fish_prompt
     # echo $sblue"["$sbryl(whoami)$sblue"@"$sbrwt(hostname) $snorm(date +%H:%M:%S)$sblue] $sbryl(prompt_pwd)
     # echo $snorm"\$ "
 
-    set local_ids C02V20DBHTD8 YSONG121849
+    # set local_ids C02V20DBHTD8 YSONG121849
 
     # set user "$sbryl"(whoami)"$snorm"
-    set islocal 0
-    for id in $local_ids
-      if [ (hostname) = $id ]
-        set islocal 1
-        break
-      end
-    end
+    # set islocal 0
+    # for id in $local_ids
+    #   if [ (hostname) = $id ]
+    #     set islocal 1
+    #     break
+    #   end
+    # end
 
-    if [ $islocal = 1 ]
+    if [ $IS_LOCAL = 1 ]
       set user "$sbrgr"(whoami)"$snorm"
     else
       set user "$sbryl"(whoami)"$snorm"
