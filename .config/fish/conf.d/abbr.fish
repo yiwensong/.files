@@ -30,6 +30,7 @@ abbr --add gc       'git clone'
 abbr --add gcom     'git commit -m'
 abbr --add gca      'git commit -am'
 abbr --add gb       'git blame'
+abbr --add gck      'git checkout'
 
 set local_functions (dirname (status --current-filename))/abbr_local.fish
 if test -e $local_functions
