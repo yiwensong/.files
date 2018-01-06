@@ -191,5 +191,4 @@ set rtp+=~/.fzf
 
 " IndentLine Settings
 let g:indentLine_enabled = 0
-nnoremap <Leader>i :IndentLinesEnable<CR>
-nnoremap <Leader><S-i> :IndentLinesDisable<CR>
+nnoremap <Leader>i :IndentLinesToggle<CR>
