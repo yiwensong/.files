@@ -8,6 +8,7 @@ Plug 'nvie/vim-flake8'
 " YouCompleteMe must be manually installed
 Plug 'Valloric/YouCompleteMe'
 Plug 'altercation/vim-colors-solarized'
+Plug 'pgdouyon/vim-yin-yang'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-rooter'
@@ -179,7 +180,7 @@ endif
 
 " Colorscheme
 set background=dark
-colorscheme solarized
+colorscheme yin
 
 "---------------------------------------------------------------------------
 
