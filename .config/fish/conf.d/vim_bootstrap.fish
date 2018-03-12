@@ -23,9 +23,9 @@ if status --is-login; and status --is-interactive
         set YCM_NEEDS_INSTALL 0
     end
     if type -q vim8
-        eval "vim8 -c \'silent! PlugInstall\' -c \'qa\' &"
+        eval "vim8 -c 'silent! PlugInstall' -c 'qa'"
     else
-        eval "vim -c \'silent! PlugInstall\' -c \'qa\' &"
+        eval "vim -c 'silent! PlugInstall' -c 'qa'"
     end
     if test $YCM_NEEDS_INSTALL = "1"
         _install_ycm
