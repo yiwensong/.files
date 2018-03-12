@@ -8,7 +8,7 @@ function _install_ycm
     tar -xvf cmake-3.10.1.tar.gz
     cd $HOME/.local/data/cmake-3.10.1
     ./bootstrap --prefix=$HOME/.local ; and make ; and make install
-    eval $HOME/.vim/plugged/YouCompleteMe/install.py --all
+    eval $HOME/.vim/plugged/YouCompleteMe/install.py --js-completer --clang-completer --go-completer
     cd $WORKDIR
 end
 
@@ -22,8 +22,10 @@ if status --is-login; and status --is-interactive
     else
         set YCM_NEEDS_INSTALL 0
     end
-    if not test -d ~/.vim/plugged
-        eval vim -c \'silent! PlugInstall\' -c \'qa\'
+    if test -q vim8
+        eval "vim8 -c \'silent! PlugInstall\' -c \'qa\' &"
+    else
+        eval "vim -c \'silent! PlugInstall\' -c \'qa\' &"
     end
     if test $YCM_NEEDS_INSTALL = "1"
         _install_ycm
