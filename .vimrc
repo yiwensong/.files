@@ -8,7 +8,7 @@ Plug 'nvie/vim-flake8'
 " YouCompleteMe must be manually installed
 Plug 'Valloric/YouCompleteMe'
 Plug 'altercation/vim-colors-solarized'
-Plug 'pgdouyon/vim-yin-yang'
+Plug 'yiwensong/vim-yin-yang'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-rooter'
