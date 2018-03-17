@@ -8,6 +8,7 @@ if status --is-login
     
     # Add stuff to your PATH
     set PATH $HOME/.local/bin $PATH
+    set PATH /usr/lib/go-1.9/bin $PATH
     if not test -d $HOME/.local
         mdkir $HOME/.local
     end
