@@ -1,3 +1,4 @@
 .config/fish/fish_history
 .config/fish/fishd.*
 .config/fish/functions/fzf_key_bindings.fish
+.config/configstore/
