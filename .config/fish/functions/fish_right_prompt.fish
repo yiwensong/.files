@@ -1,8 +1,9 @@
 function fish_right_prompt -d "write right prompt"
     set -l exit_code $status
     set -l is_git_repository (git rev-parse --is-inside-work-tree 2>/dev/null)
+    set -l is_bare_repo (git rev-parse --is-bare-repository 2>/dev/null)
 
-    if test -n "$is_git_repository"
+    if test -n "$is_git_repository"; and test $is_bare_repo = false
 
         if test (git stash list | wc -l) -gt 0
             echo -n "🥑  "
@@ -34,7 +35,4 @@ function fish_right_prompt -d "write right prompt"
             echo -n "😎 "
         end
     end
-
-    echo ""
-
 end
