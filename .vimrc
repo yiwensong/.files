@@ -4,11 +4,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-speeddating'
 Plug 'sheerun/vim-polyglot'
+Plug 'RRethy/vim-illuminate'
 Plug 'nvie/vim-flake8'
+Plug 'w0rp/ale'
 " YouCompleteMe must be manually installed
 Plug 'Valloric/YouCompleteMe'
 Plug 'altercation/vim-colors-solarized'
 Plug 'yiwensong/vim-yin-yang'
+Plug 'ap/vim-buftabline'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-rooter'
@@ -193,3 +196,11 @@ set rtp+=~/.fzf
 " IndentLine Settings
 let g:indentLine_enabled = 0
 nnoremap <Leader>i :IndentLinesToggle<CR>
+
+"---------------------------------------------------------------------------
+
+" ALE Settings
+let g:ale_virtualenv_dir_names = ['virtualenv_run', 'venv', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', '.tox/py27', '.tox/py36', '$HOME/.local/venv']
+
+" vim-illuminate settings
+hi illuminatedWord cterm=underline gui=underline
