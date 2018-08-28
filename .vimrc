@@ -8,6 +8,7 @@ Plug 'RRethy/vim-illuminate'
 Plug 'nvie/vim-flake8'
 Plug 'w0rp/ale'
 Plug 'maralla/completor.vim'
+Plug 'SirVer/ultisnips'
 Plug 'altercation/vim-colors-solarized'
 Plug 'yiwensong/vim-yin-yang'
 Plug 'ap/vim-buftabline'
@@ -203,3 +204,7 @@ let g:ale_virtualenv_dir_names = ['virtualenv_run', 'venv', '.env', '.venv', 'en
 
 " vim-illuminate settings
 hi illuminatedWord cterm=underline gui=underline
+
+" completor settings
+let g:completor_python_binary = '$HOME/.venv/bin/python'
+let g:completor_gocode_binary = '$HOME/go/bin/gocode'

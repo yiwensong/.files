@@ -3,4 +3,5 @@ if status --is-login; and status --is-interactive
         virtualenv --python=python3 ~/.venv
         ~/.venv/bin/pip3 install ipython
     end
+    pip3 install jedi
 end
