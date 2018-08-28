@@ -8,7 +8,7 @@ function _install_ycm
     tar -xvf cmake-3.10.1.tar.gz
     cd $HOME/.local/data/cmake-3.10.1
     ./bootstrap --prefix=$HOME/.local ; and make ; and make install
-    eval $HOME/.vim/plugged/YouCompleteMe/install.py --js-completer --clang-completer --go-completer
+    eval $HOME/.vim/plugged/YouCompleteMe/install.py --js-completer --clang-completer --system-libclang --go-completer
     cd $WORKDIR
 end
 
@@ -17,18 +17,10 @@ if status --is-login; and status --is-interactive
         curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
                 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     end
-    if not test -d ~/.vim/plugged/YouCompleteMe
-        set YCM_NEEDS_INSTALL 1
-    else
-        set YCM_NEEDS_INSTALL 0
-    end
     if type -q vim8
         eval "vim8 -c 'silent! PlugInstall' -c 'qa'"
     else
         eval "vim -c 'silent! PlugInstall' -c 'qa'"
-    end
-    if test $YCM_NEEDS_INSTALL = "1"
-        _install_ycm
     end
     if not test -d ~/.vim/undo
         mkdir ~/.vim/undo
