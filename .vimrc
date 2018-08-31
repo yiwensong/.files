@@ -49,6 +49,70 @@ set mouse=a
 set number
 
 "---------------------------------------------------------------------------
+" THESE LINES ARE LEFT BLANK INTENTIONALLY. PLEASE DO NOT START WRITING REAL
+" CODE UNTIL LINE 100.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"---------------------------------------------------------------------------
 
 " Highlighting
 
