@@ -13,7 +13,7 @@ function _install_ycm
 end
 
 if status --is-login; and status --is-interactive
-    head $HOME/.vimrc -n 100 > $HOME/.vimrc_bootstrap
+    head -n 100 $HOME/.vimrc > $HOME/.vimrc_bootstrap
     if not test -e ~/.vim/autoload/plug.vim
         curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
                 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
