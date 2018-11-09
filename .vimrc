@@ -130,6 +130,10 @@ set incsearch
 set ignorecase
 set smartcase
 
+" italics show correctly
+set t_ZH=[3m
+set t_ZR=[23m
+
 "---------------------------------------------------------------------------
 
 " Commandline
