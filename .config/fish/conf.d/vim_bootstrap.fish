@@ -1,16 +1,14 @@
-head -n 100 $HOME/.vimrc > $HOME/.vimrc_bootstrap
-if not test -e ~/.vim/autoload/plug.vim
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+head -n 100 $HOME/.config/nvim/init.vim > $HOME/.config/nvim/init_bootstrap.vim
+if not test -e $HOME/.local/share/nvim/site/autoload/plug.vim
+    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 end
-if type -q vim8
-    eval "vim8 -u $HOME/.vimrc_bootstrap -c 'silent! PlugInstall' -c 'qa'"
-else
-    eval "vim -u $HOME/.vimrc_bootstrap -c 'silent! PlugInstall' -c 'qa'"
+
+eval "nvim -u $HOME/.config/nvim/init_bootstrap.vim -c 'silent! PlugInstall' -c 'qa'"
+
+if not test -d $HOME/.local/share/nvim/undo
+    mkdir $HOME/.local/share/nvim/undo
 end
-if not test -d ~/.vim/undo
-    mkdir ~/.vim/undo
-end
-if not test -d ~/.vim/swapfiles
-    mkdir ~/.vim/swapfiles
+if not test -d $HOME/.local/share/nvim/swap
+    mkdir $HOME/.local/share/nvim/swap
 end

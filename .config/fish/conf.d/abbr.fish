@@ -17,6 +17,7 @@ abbr --add jq       'jq -C -S'
 abbr --add ls       'ls -ahl'
 abbr --add ssh      'ssh -A'
 abbr --add python   'python3'
+abbr --add vim      'nvim'
 
 # Git abbrs
 abbr --add gadd     'git add'
