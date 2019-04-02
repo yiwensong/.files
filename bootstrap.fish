@@ -29,5 +29,6 @@ end
 
 # softlink them to this directory
 ln -s $confdir/.config/fish $HOME/.config/fish
+ln -s $confdir/.config/nvim $HOME/.config/nvim
 ln -s $confdir/.vimrc $HOME/.vimrc
 ln -s $confdir/.tmux.conf $HOME/.tmux.conf
