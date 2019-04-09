@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-speeddating'
 Plug 'sheerun/vim-polyglot'
 Plug 'RRethy/vim-illuminate'

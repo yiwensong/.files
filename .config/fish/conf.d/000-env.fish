@@ -2,7 +2,7 @@
 
 if status --is-login
     # Set default editor
-    set EDITOR "vim"
+    set EDITOR "nvim"
     # Uncomment this if you hate yourself
     # set EDITOR "emacs"
     
