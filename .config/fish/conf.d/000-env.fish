@@ -10,8 +10,6 @@ if status --is-login
     set PATH $HOME/.local/bin $PATH
     set PATH /usr/lib/go-1.9/bin $PATH
     set PATH $HOME/.venv/bin $PATH
-    set PATH $HOME/stripe/space-commander/bin $PATH
-    set PATH $HOME/stripe/password-vault/bin $PATH
     if not test -d $HOME/.local
         mdkir $HOME/.local
     end
