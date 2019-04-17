@@ -268,6 +268,7 @@ set rtp+=~/.fzf
 
 " IndentLine Settings
 let g:indentLine_enabled = 0
+au BufRead,BufNewFile *.rb IndentLinesToggle
 nnoremap <Leader>i :IndentLinesToggle<CR>
 
 "---------------------------------------------------------------------------
