@@ -22,6 +22,10 @@ if test -f $HOME/.tmux.conf
     mv $HOME/.tmux.conf $backup_folder
 end
 
+if test -f $HOME/.pryrc
+    mv $HOME/.pryrc $backup_folder
+end
+
 # make a ~/.config folder if not there
 if not test -d $HOME/.config
     mkdir $HOME/.config
@@ -32,3 +36,4 @@ ln -s $confdir/.config/fish $HOME/.config/fish
 ln -s $confdir/.config/nvim $HOME/.config/nvim
 ln -s $confdir/.vimrc $HOME/.vimrc
 ln -s $confdir/.tmux.conf $HOME/.tmux.conf
+ln -s $confdir/.pryrc $HOME/.pryrc
