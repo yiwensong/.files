@@ -8,7 +8,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'RRethy/vim-illuminate'
 Plug 'nvie/vim-flake8'
 Plug 'w0rp/ale'
-Plug 'maralla/completor.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'yiwensong/vim-yin-yang'
 Plug 'ap/vim-buftabline'
@@ -16,6 +15,15 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-rooter'
 Plug 'Yggdroot/indentLine'
+Plug 'ctrlpvim/ctrlp.vim'
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 call plug#end()
 
@@ -169,6 +177,9 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 
+" Stripe js is 2 space tabs go figure
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+
 "---------------------------------------------------------------------------
 
 " Disable annoying crap
@@ -275,6 +286,7 @@ nnoremap <Leader>i :IndentLinesToggle<CR>
 
 " ALE Settings
 let g:ale_virtualenv_dir_names = ['virtualenv_run', 'venv', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', '.tox/py27', '.tox/py36', '$HOME/.local/venv']
+let g:ale_completion_enabled = 1
 
 " vim-illuminate settings
 hi illuminatedWord cterm=underline gui=underline
@@ -288,3 +300,17 @@ let g:completor_gocode_binary = '$HOME/go/bin/gocode'
 let g:splitjoin_python_brackets_on_separate_lines = 1
 let g:splitjoin_trailing_comma = 1
 let g:splitjoin_curly_brace_padding = 0
+
+"---------------------------------------------------------------------------
+" ctrlp settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_max_files=100000
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+"---------------------------------------------------------------------------
+" Completions
+let g:deoplete#enable_at_startup = 1
