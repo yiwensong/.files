@@ -1,22 +1,53 @@
 " VimPlug
 call plug#begin('~/.vim/plugged')
 
+" fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
+" ^a and ^z to increment dates
 Plug 'tpope/vim-speeddating'
+
+" Language highlights
 Plug 'sheerun/vim-polyglot'
+
+" Highlights other occurrences of word that is overed over
 Plug 'RRethy/vim-illuminate'
+
+" Flake8 for my vim
 Plug 'nvie/vim-flake8'
+
+" ALE is useful for linting and completions
 Plug 'w0rp/ale'
+
+" Backup theme for colored laptops
 Plug 'altercation/vim-colors-solarized'
+
+" Theme
 Plug 'yiwensong/vim-yin-yang'
+
+" Displays Buffers in the tab line
 Plug 'ap/vim-buftabline'
+
+" gJ and gS to split and join lines
 Plug 'AndrewRadev/splitjoin.vim'
+
+"Git stuff
 Plug 'tpope/vim-fugitive'
+
+" Sets vim to run at the root of git repo
 Plug 'airblade/vim-rooter'
+
+" Displays line indentations
 Plug 'Yggdroot/indentLine'
+
+" Control-P to open shit
 Plug 'ctrlpvim/ctrlp.vim'
 
+" Automatic indentation
+Plug 'tpope/vim-sleuth'
+
+" This is a completion engine
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -57,7 +88,107 @@ set number
 
 "---------------------------------------------------------------------------
 " THESE LINES ARE LEFT BLANK INTENTIONALLY. PLEASE DO NOT START WRITING REAL
-" CODE UNTIL LINE 100.
+" CODE UNTIL LINE 240.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -178,7 +309,8 @@ set tabstop=4
 set expandtab
 
 " Stripe js is 2 space tabs go figure
-autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+" autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+" autocmd BufReadPost * :DetectIndent 
 
 "---------------------------------------------------------------------------
 
