@@ -56,6 +56,9 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+" Sorbet stuff
+Plug 'zackhsi/sorbet-lsp'
+
 call plug#end()
 
 "---------------------------------------------------------------------------
@@ -429,6 +432,7 @@ let g:completor_gocode_binary = '$HOME/go/bin/gocode'
 "---------------------------------------------------------------------------
 " splitjoin settings
 let g:splitjoin_python_brackets_on_separate_lines = 1
+let g:splitjoin_ruby_hanging_args = 0
 let g:splitjoin_trailing_comma = 1
 let g:splitjoin_curly_brace_padding = 0
 
@@ -445,3 +449,7 @@ endif
 "---------------------------------------------------------------------------
 " Completions
 let g:deoplete#enable_at_startup = 1
+
+"---------------------------------------------------------------------------
+" Sorbet
+let g:ale_linters = {'ruby': ['sorbet-lsp']}
