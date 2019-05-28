@@ -11,6 +11,9 @@ Plug 'tpope/vim-speeddating'
 " Language highlights
 Plug 'sheerun/vim-polyglot'
 
+" Bazel highlights
+Plug 'durandj/bazel.vim'
+
 " Highlights other occurrences of word that is overed over
 Plug 'RRethy/vim-illuminate'
 
@@ -420,7 +423,7 @@ nnoremap <Leader>i :IndentLinesToggle<CR>
 
 " ALE Settings
 let g:ale_virtualenv_dir_names = ['virtualenv_run', 'venv', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', '.tox/py27', '.tox/py36', '$HOME/.local/venv']
-let g:ale_completion_enabled = 1
+" let g:ale_completion_enabled = 1
 
 " vim-illuminate settings
 hi illuminatedWord cterm=underline gui=underline
@@ -453,3 +456,8 @@ let g:deoplete#enable_at_startup = 1
 "---------------------------------------------------------------------------
 " Sorbet
 let g:ale_linters = {'ruby': ['sorbet-lsp']}
+
+
+"---------------------------------------------------------------------------
+" Skylark files
+autocmd BufRead,BufNewFile *.sky set filetype=python
