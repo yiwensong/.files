@@ -44,9 +44,6 @@ Plug 'airblade/vim-rooter'
 " Displays line indentations
 Plug 'Yggdroot/indentLine'
 
-" Control-P to open shit
-Plug 'ctrlpvim/ctrlp.vim'
-
 " Automatic indentation
 Plug 'tpope/vim-sleuth'
 
@@ -331,7 +328,7 @@ set visualbell
 set t_vb=
 
 " Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=200
+set notimeout ttimeout ttimeoutlen=0
 
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
@@ -438,16 +435,6 @@ let g:splitjoin_python_brackets_on_separate_lines = 1
 let g:splitjoin_ruby_hanging_args = 0
 let g:splitjoin_trailing_comma = 1
 let g:splitjoin_curly_brace_padding = 0
-
-"---------------------------------------------------------------------------
-" ctrlp settings
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_max_files=100000
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
 
 "---------------------------------------------------------------------------
 " Completions
