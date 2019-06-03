@@ -435,6 +435,7 @@ let g:splitjoin_python_brackets_on_separate_lines = 1
 let g:splitjoin_ruby_hanging_args = 0
 let g:splitjoin_trailing_comma = 1
 let g:splitjoin_curly_brace_padding = 0
+let g:splitjoin_html_attributes_bracket_on_new_line = 1
 
 "---------------------------------------------------------------------------
 " Completions
