@@ -7,9 +7,11 @@ if status --is-login
     # set EDITOR "emacs"
     
     # Add stuff to your PATH
-    set PATH $HOME/.local/bin $PATH
-    set PATH /usr/lib/go-1.9/bin $PATH
-    set PATH $HOME/.venv/bin $PATH
+    set fish_user_paths $HOME/.local/bin $fish_user_paths
+    set fish_user_paths /usr/lib/go-1.9/bin $fish_user_paths
+    set fish_user_paths $HOME/.venv/bin $fish_user_paths
+    set fish_user_paths $GOPATH/bin $fish_user_paths
+
     if not test -d $HOME/.local
         mdkir $HOME/.local
     end

@@ -373,8 +373,8 @@ nnoremap ; :
 
 " FZF
 nnoremap <Leader>f :<C-u>GFiles<CR>
-nnoremap <Leader>p :<C-u>FZF<CR>
-nnoremap <Leader>b :<C-u>Buffers<CR>
+nnoremap <Leader>g :<C-u>FZF<CR>
+nnoremap <Leader>bb :<C-u>Buffers<CR>
 
 " Don't use first or last 3 lines of screen to edit
 set scrolloff=3
