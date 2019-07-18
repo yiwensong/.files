@@ -6,6 +6,9 @@ if status --is-login
     # Uncomment this if you hate yourself
     # set EDITOR "emacs"
     
+    # clear the current path
+    set -e fish_user_paths
+
     # Add stuff to your PATH
     set fish_user_paths $HOME/.local/bin $fish_user_paths
     set fish_user_paths /usr/lib/go-1.9/bin $fish_user_paths
