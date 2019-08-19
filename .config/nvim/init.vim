@@ -421,6 +421,11 @@ nnoremap <Leader>i :IndentLinesToggle<CR>
 " ALE Settings
 let g:ale_virtualenv_dir_names = ['virtualenv_run', 'venv', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', '.tox/py27', '.tox/py36', '$HOME/.local/venv']
 " let g:ale_completion_enabled = 1
+let g:ale_linters = {
+\   'go': ['gopls'],
+\   'ruby': ['sorbet-lsp'],
+\}
+let g:ale_go_gopls_executable = '$GOPATH/bin/gopls'
 
 " vim-illuminate settings
 hi illuminatedWord cterm=underline gui=underline
@@ -442,10 +447,7 @@ let g:splitjoin_html_attributes_bracket_on_new_line = 1
 let g:deoplete#enable_at_startup = 1
 
 "---------------------------------------------------------------------------
-" Sorbet
-let g:ale_linters = {'ruby': ['sorbet-lsp']}
-
-
-"---------------------------------------------------------------------------
-" Skylark files
+" Skylark and other python-like files
 autocmd BufRead,BufNewFile *.sky set filetype=python
+autocmd BufRead,BufNewFile BUILD set filetype=python
+autocmd BufRead,BufNewFile BUILD.bazel set filetype=python
