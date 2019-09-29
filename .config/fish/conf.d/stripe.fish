@@ -1,6 +1,6 @@
 # all the stripe magic
 
-if status --is-login; and status --is-interactive
+if status --is-login; and status --is-interactive; and test -e $HOME/.stripeproxy
     # Add the stripe tools paths
     set PATH $HOME/stripe/space-commander/bin $PATH
     set PATH $HOME/stripe/password-vault/bin $PATH

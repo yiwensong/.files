@@ -87,7 +87,7 @@ function fill_all_repos
     echo $today > $timer
 end
 
-if status --is-login
+if status --is-login; and test -e $HOME/.stripeproxy
     fill_all_repos
 end
 
