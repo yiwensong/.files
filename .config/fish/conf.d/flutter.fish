@@ -1,6 +1,8 @@
+set FLUTTER_PATH $HOME/local_install/
+
 function flutter_clean
     echo "Cleaning up previous installation of flutter"
-    rm -rf $HOME/.flutter/
+    rm -rf $FLUTTER_PATH
 end
 
 if status --is-login; and status --is-interactive
@@ -22,11 +24,11 @@ if status --is-login; and status --is-interactive
             $DOWNLOAD_URL
     end
 
-    if not test -e $HOME/.flutter/
+    if not test -e $FLUTTER_PATH
         echo "Extracting flutter"
-        mkdir $HOME/.flutter
-        tar --extract --file=$DOWNLOAD_PATH --directory=$HOME/.flutter
+        mkdir -p $FLUTTER_PATH
+        tar --extract --file=$DOWNLOAD_PATH --directory=$FLUTTER_PATH
     end
 
-    set fish_user_paths $HOME/.flutter/flutter/bin $fish_user_paths
+    set fish_user_paths $FLUTTER_PATH/flutter/bin $fish_user_paths
 end
