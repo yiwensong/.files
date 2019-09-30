@@ -4,4 +4,5 @@ if status --is-login; and status --is-interactive
         $HOME/.venv/bin/pip3 install ipython
     end
     $HOME/.venv/bin/pip3 install jedi
+    $HOME/.venv/bin/pip3 install neovim
 end
