@@ -13,7 +13,7 @@ if status --is-login; and status --is-interactive
 
     set DOWNLOAD_PATH '/tmp/flutter_linux_'$FLUTTER_VERSION'.tar.xz'
 
-    if not test -e $DOWNLOAD_PATH
+    if not test -e $DOWNLOAD_PATH; and not which flutter
         flutter_clean
 
         echo "Downloading flutter"
