@@ -6,6 +6,8 @@ function flutter_clean
 end
 
 if status --is-login; and status --is-interactive
+    set fish_user_paths $FLUTTER_PATH/flutter/bin $fish_user_paths
+
     set FLUTTER_VERSION 'v1.9.1+hotfix.2-stable'
     set FILE_PATH 'stable/linux/flutter_linux_'$FLUTTER_VERSION'.tar.xz'
     set URL_BASE 'https://storage.googleapis.com/flutter_infra/releases/'
@@ -29,6 +31,4 @@ if status --is-login; and status --is-interactive
         mkdir -p $FLUTTER_PATH
         tar --extract --file=$DOWNLOAD_PATH --directory=$FLUTTER_PATH
     end
-
-    set fish_user_paths $FLUTTER_PATH/flutter/bin $fish_user_paths
 end
