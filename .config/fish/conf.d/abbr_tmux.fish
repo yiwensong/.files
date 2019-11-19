@@ -1,0 +1,10 @@
+# tmux abbrs
+abbr --add x        'tmux'
+abbr --add xa       'tmux attach'
+abbr --add xat      'tmux attach -t'
+abbr --add xl       'tmux l'
+abbr --add xls      'tmux ls'
+abbr --add xn       'tmux new'
+abbr --add xns      'tmux new -s'
+abbr --add xj       'tmux-proj'
+abbr --add xy       'tmux-pay'
