@@ -11,6 +11,9 @@ Plug 'tpope/vim-speeddating'
 " Language highlights
 Plug 'sheerun/vim-polyglot'
 
+" Vim go
+Plug 'fatih/vim-go'
+
 " Bazel highlights
 Plug 'durandj/bazel.vim'
 
