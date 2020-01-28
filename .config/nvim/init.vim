@@ -378,7 +378,7 @@ nnoremap ; :
 nnoremap <Leader>f :<C-u>GFiles<CR>
 nnoremap <Leader>g :<C-u>FZF<CR>
 nnoremap <Leader>bb :<C-u>Buffers<CR>
-
+"
 " Don't use first or last 3 lines of screen to edit
 set scrolloff=3
 
@@ -398,14 +398,14 @@ endif
 "---------------------------------------------------------------------------
 
 " Colorscheme
-set background=dark
-colorscheme yin
+set background=light
+colorscheme yang
 
 "---------------------------------------------------------------------------
 
 " Highlight lines past 80 and 120
 let &colorcolumn="80,".join(range(120,999),",")
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
+highlight ColorColumn ctermbg=10 guibg=lightgray
 
 "---------------------------------------------------------------------------
 
