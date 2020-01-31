@@ -1,6 +1,16 @@
 # General environment variables
 
 if status --is-login
+    if not test -d $HOME/.config
+        mkdir $HOME/.config
+    end
+    set XDG_CONFIG_HOME $HOME/.config
+
+    if not test -d $HOME/.cache
+        mkdir $HOME/.cache
+    end
+    set XDG_CONFIG_CACHE $HOME/.cache
+
     # Set default editor
     set EDITOR "nvim"
     # Uncomment this if you hate yourself
