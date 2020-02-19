@@ -20,6 +20,9 @@ Plug 'durandj/bazel.vim'
 " Highlights other occurrences of word that is overed over
 Plug 'RRethy/vim-illuminate'
 
+" Undotree
+Plug 'mbbill/undotree'
+
 " Flake8 for my vim
 Plug 'nvie/vim-flake8'
 
