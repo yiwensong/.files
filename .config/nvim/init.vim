@@ -50,6 +50,9 @@ Plug 'airblade/vim-rooter'
 " Displays line indentations
 Plug 'Yggdroot/indentLine'
 
+" Comments
+Plug 'tpope/vim-commentary'
+
 " Automatic indentation
 Plug 'tpope/vim-sleuth'
 
@@ -457,3 +460,10 @@ let g:deoplete#enable_at_startup = 1
 autocmd BufRead,BufNewFile *.sky set filetype=python
 autocmd BufRead,BufNewFile BUILD set filetype=python
 autocmd BufRead,BufNewFile BUILD.bazel set filetype=python
+
+"---------------------------------------------------------------------------
+" Commentary
+nmap <leader>c <Plug>Commentary
+xmap <leader>c <Plug>Commentary
+omap <leader>c <Plug>Commentary
+nmap <leader>cc <Plug>CommentaryLine
