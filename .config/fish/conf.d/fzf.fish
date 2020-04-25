@@ -5,3 +5,4 @@ if status --is-login; and status --is-interactive; and not type -q fzf
 end
 
 set FZF_DEFAULT_OPTS '--color=light'
+set FZF_DEFAULT_COMMAND 'fd --type file'
