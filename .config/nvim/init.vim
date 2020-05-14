@@ -381,10 +381,43 @@ nnoremap <Leader>9 :blast<CR>
 nnoremap ; :
 
 " FZF
-nnoremap <Leader>f :<C-u>GFiles<CR>
-nnoremap <Leader>g :<C-u>FZF<CR>
 nnoremap <Leader>bb :<C-u>Buffers<CR>
-"
+
+" Replacement for :GFiles since it doesn't respect system vars
+nnoremap <silent> <Leader>f :call fzf#run({
+\   'source': 'fd --type file',
+\   'down': '40%',
+\   'sink': 'edit',
+\   'options': '--no-multi --color=light',
+\ })<CR>
+
+" Replacement for :FZF since it doesn't respect system vars
+nnoremap <silent> <Leader>g :call fzf#run({
+\   'source': 'fd --no-ignore --follow --type file',
+\   'down': '40%',
+\   'sink': 'edit',
+\   'options': '--no-multi --color=light',
+\ })<CR>
+
+" Replacement for :Buffers
+function! s:buflist()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
+
+function! s:bufopen(e)
+  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+nnoremap <silent> <Leader><Enter> :call fzf#run({
+\   'source':  reverse(<sid>buflist()),
+\   'sink':    function('<sid>bufopen'),
+\   'options': '--no-multi --color=light',
+\   'down':    len(<sid>buflist()) + 2
+\ })<CR>
+
 " Don't use first or last 3 lines of screen to edit
 set scrolloff=3
 

@@ -6,3 +6,5 @@ end
 
 set FZF_DEFAULT_OPTS '--color=light'
 set FZF_DEFAULT_COMMAND 'fd --type file'
+set FZF_CTRL_T_COMMAND 'fd'
+set FZF_ALT_C_COMMAND 'fd --type directory'
