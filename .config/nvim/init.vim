@@ -385,7 +385,7 @@ nnoremap <Leader>bb :<C-u>Buffers<CR>
 
 " Replacement for :GFiles since it doesn't respect system vars
 nnoremap <silent> <Leader>f :call fzf#run({
-\   'source': 'fd --type file',
+\   'source': 'fd --hidden --type file --exclude ".git"',
 \   'down': '40%',
 \   'sink': 'edit',
 \   'options': '--no-multi --color=light',
@@ -393,7 +393,7 @@ nnoremap <silent> <Leader>f :call fzf#run({
 
 " Replacement for :FZF since it doesn't respect system vars
 nnoremap <silent> <Leader>g :call fzf#run({
-\   'source': 'fd --no-ignore --follow --type file',
+\   'source': 'fd --hidden --no-ignore --follow --type file',
 \   'down': '40%',
 \   'sink': 'edit',
 \   'options': '--no-multi --color=light',
