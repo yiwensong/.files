@@ -1,5 +1,3 @@
-# all the stripe magic
-
 if status --is-login; and status --is-interactive; and test -e $HOME/.stripeproxy
     # Add the stripe tools paths
     set PATH $HOME/stripe/space-commander/bin $PATH
@@ -12,5 +10,4 @@ if status --is-login; and status --is-interactive; and test -e $HOME/.stripeprox
     source (rbenv init -|psub)
     source (nodenv init -|psub)
     source ~/stripe/space-commander/bin/sc-env-activate.fish
-    functions -e fish_right_prompt
 end
