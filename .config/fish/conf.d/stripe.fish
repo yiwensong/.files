@@ -9,5 +9,8 @@ if status --is-login; and status --is-interactive; and test -e $HOME/.stripeprox
     # Activate the space-commander env
     source (rbenv init -|psub)
     source (nodenv init -|psub)
-    source ~/stripe/space-commander/bin/sc-env-activate.fish
+    source $HOME/stripe/space-commander/bin/sc-env-activate.fish
+    
+    # reset fish_right_prompt
+    source $HOME/.config/fish/functions/fish_right_prompt.fish
 end
