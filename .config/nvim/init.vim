@@ -41,6 +41,9 @@ Plug 'ap/vim-buftabline'
 " gJ and gS to split and join lines
 Plug 'AndrewRadev/splitjoin.vim'
 
+" turn trues into falses
+Plug 'AndrewRadev/switch.vim'
+
 "Git stuff
 Plug 'tpope/vim-fugitive'
 
