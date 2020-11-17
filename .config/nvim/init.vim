@@ -2,7 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 " fzf
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/bin/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " ^a and ^z to increment dates

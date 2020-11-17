@@ -25,7 +25,7 @@ if status --is-login
     set fish_user_paths $HOME/.venv/bin $fish_user_paths
     set fish_user_paths $GOPATH/bin $fish_user_paths
     set fish_user_paths $HOME/.cargo/bin $fish_user_paths
-    set fish_user_paths $HOME/.fzf/bin $fish_user_paths
+    set fish_user_paths $HOME/bin/.fzf/bin $fish_user_paths
 
     # gnu packages because osx ones are bad apparently
     set fish_user_paths /usr/local/opt/gnu-sed/libexec/gnubin $fish_user_paths
