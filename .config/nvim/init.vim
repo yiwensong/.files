@@ -324,7 +324,7 @@ set tabstop=4
 set expandtab
 
 " Stripe js is 2 space tabs go figure
-" autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 " autocmd BufReadPost * :DetectIndent 
 
 "---------------------------------------------------------------------------
@@ -441,13 +441,13 @@ endif
 
 " Colorscheme
 set background=light
-colorscheme yang
+colorscheme solarized
 
 "---------------------------------------------------------------------------
 
 " Highlight lines past 80 and 120
 let &colorcolumn="80,".join(range(120,999),",")
-highlight ColorColumn ctermbg=15 guibg=lightgray
+highlight ColorColumn ctermbg=7 guibg=lightgray
 
 "---------------------------------------------------------------------------
 
