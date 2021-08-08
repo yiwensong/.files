@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 set confdir (pwd)"/"(dirname (status -f))
 
 # move old configs
