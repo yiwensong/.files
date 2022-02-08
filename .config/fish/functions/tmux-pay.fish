@@ -3,7 +3,7 @@ function tmux-pay --description 'starts a tmux session for pay-server'
     set main_pane_name pay
     set side_pane_name "pay up"
 
-    set psdir $HOME/stripe/pay-server
+    set psdir $HOME/h/source/hyperbase
 
     if tmux ls | rg $session_name
         if test -z $TMUX

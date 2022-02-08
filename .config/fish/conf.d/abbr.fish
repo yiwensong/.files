@@ -19,6 +19,9 @@ abbr --add ssh      'ssh -A'
 abbr --add python   'python3'
 abbr --add vim      'nvim'
 
+# cdenv is used to cd with automatic env update
+abbr --add cd       'cdenv'
+
 set local_functions (dirname (status --current-filename))/abbr_local.fish
 if test -e $local_functions
     source $local_functions

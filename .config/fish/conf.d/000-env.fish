@@ -31,6 +31,11 @@ if status --is-login
     set fish_user_paths /usr/local/opt/gnu-sed/libexec/gnubin $fish_user_paths
     set fish_user_paths /usr/local/opt/gnu-tar/libexec/gnubin $fish_user_paths
 
+    # apple silicon brew
+    if test (uname -m) = "arm64"
+        set fish_user_paths /opt/homebrew/bin $fish_user_paths
+    end
+
     if not test -d $HOME/.local
         mdkir $HOME/.local
     end
