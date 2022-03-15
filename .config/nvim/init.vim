@@ -71,6 +71,12 @@ endif
 " Sorbet stuff
 Plug 'zackhsi/sorbet-lsp'
 
+" For auto formatting comments
+Plug 'inkarkat/vim-OnSyntaxChange'
+" This is a dependency library from the same author that includes
+" some autoload functions that he uses on the plugins he writes.
+Plug 'inkarkat/vim-ingo-library'
+
 call plug#end()
 
 "---------------------------------------------------------------------------
@@ -266,6 +272,10 @@ set number
 
 
 "---------------------------------------------------------------------------
+" Leader to spacebar
+let mapleader = " "
+
+"---------------------------------------------------------------------------
 
 " Highlighting
 
@@ -324,8 +334,8 @@ set tabstop=4
 set expandtab
 
 " Stripe js is 2 space tabs go figure
-autocmd FileType javascript setlocal ts=2 sts=2 sw=2
-" autocmd BufReadPost * :DetectIndent 
+" autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+" autocmd BufReadPost * :DetectIndent
 
 "---------------------------------------------------------------------------
 
@@ -465,12 +475,30 @@ nnoremap <Leader>i :IndentLinesToggle<CR>
 
 " ALE Settings
 let g:ale_virtualenv_dir_names = ['virtualenv_run', 'venv', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', '.tox/py27', '.tox/py36', '$HOME/.local/venv']
-" let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 1
 let g:ale_linters = {
 \   'go': ['gopls'],
 \   'ruby': ['sorbet-lsp'],
+\   'javascript': ['eslint', 'prettier'],
+\   'typescript': ['eslint', 'prettier', 'tsserver'],
 \}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier'],
+\   'typescript': ['prettier'],
+\   'typescriptreact': ['prettier'],
+\   'markdown': ['prettier'],
+\   'markdown.mdx': ['prettier'],
+\   'less': ['prettier'],
+\   'json': ['prettier'],
+\   'yaml': ['prettier'],
+\}
+
+let g:ale_fix_on_save = 1
+
 let g:ale_go_gopls_executable = '$GOPATH/bin/gopls'
+
+nnoremap <leader>t :ALEGoToDefinition<CR>
 
 " vim-illuminate settings
 hi illuminatedWord cterm=underline gui=underline
@@ -489,7 +517,7 @@ let g:splitjoin_html_attributes_bracket_on_new_line = 1
 
 "---------------------------------------------------------------------------
 " Completions
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 "---------------------------------------------------------------------------
 " Skylark and other python-like files
@@ -518,3 +546,28 @@ nnoremap <c-a> :if !switch#Switch() <bar>
   \ call speeddating#increment(v:count1) <bar> endif<cr>
 nnoremap <c-x> :if !switch#Switch({'reverse': 1}) <bar>
   \ call speeddating#increment(-v:count1) <bar> endif<cr>
+
+"---------------------------------------------------------------------------
+" vim-rooter
+let g:rooter_patterns = ['.git', '_darcs', '.hg', '.bzr', '.svn']
+
+"---------------------------------------------------------------------------
+" auto formatting comments
+" Add a new autocommand that will activate when the cursor is on a Comment and
+" it either enters or leaves insert mode.
+" 1. The name: `Comment` means the autocmd will be called
+" `SyntaxCommentEnter{MODE}`
+" 2. A regex to max the syntax, on our case any syntax similar to `Comment`
+" will match to us.
+" 3. Whether we want to generate it to all buffers or only a particular one,
+" we're ok with only the current buffer.
+" 4. To which mode we want to link the autocommand. We're only interested in
+" the insert mode
+call OnSyntaxChange#Install('Comment', '^Comment$', 1, 'i')
+
+augroup auto_wrap_comments
+  " Set textwidth to 80 when editing
+  autocmd User SyntaxCommentEnterI setlocal textwidth=72
+  " Remove it again when leaving insert mode
+  autocmd User SyntaxCommentLeaveI setlocal tw=0
+augroup END

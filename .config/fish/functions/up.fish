@@ -16,6 +16,6 @@ function up -d 'cd up directory with int param'
     end
 
     if test -n $path
-        cd $path
+        cdenv $path
     end
 end
