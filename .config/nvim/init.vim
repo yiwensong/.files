@@ -77,6 +77,9 @@ Plug 'inkarkat/vim-OnSyntaxChange'
 " some autoload functions that he uses on the plugins he writes.
 Plug 'inkarkat/vim-ingo-library'
 
+" Copy github links to clip
+Plug 'knsh14/vim-github-link'
+
 call plug#end()
 
 "---------------------------------------------------------------------------
@@ -571,3 +574,7 @@ augroup auto_wrap_comments
   " Remove it again when leaving insert mode
   autocmd User SyntaxCommentLeaveI setlocal tw=0
 augroup END
+
+"---------------------------------------------------------------------------
+" copy github links
+vmap <leader>g :GetCommitLink<cr>

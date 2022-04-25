@@ -8,7 +8,7 @@ function __autoenv -d "automatically checks for environments and activates them"
         deactivate_node
     end
 
-    set node_version (string match -r '\d+\.\d+\.\d+' (rg "nodejsVersion" $HOME/h/source/hyperbase/admin/airbuild.js  | cut -f2 -d':'))
+    set node_version (jq --raw-output '.nodejsVersion' $HOME/h/source/hyperbase/admin/runtime_config.json)
 
     if not test -z $argv[1]
         # pushd so we can use pwd canonical form

@@ -7,5 +7,6 @@ function giffi --description 'turns a video file into a gif'
         brew install gifsicle
     end
 
-    ffmpeg -i $argv[1] -pix_fmt rgb8 -r 10 $argv[2]; and gifsicle -O3 $argv[2] -o $argv[2]
+    set tmp_out (mktemp -d)/(basename $argv[2])
+    ffmpeg -i $argv[1] -pix_fmt rgb8 -r 10 $tmp_out; and gifsicle -O3 $tmp_out -o $argv[2]
 end
