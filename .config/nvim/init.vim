@@ -499,6 +499,7 @@ let g:ale_fixers = {
 
 let g:ale_fix_on_save = 1
 
+let g:ale_javascript_prettier_executable = './node_modules/prettier/bin-prettier.js'
 let g:ale_go_gopls_executable = '$GOPATH/bin/gopls'
 
 nnoremap <leader>t :ALEGoToDefinition<CR>
