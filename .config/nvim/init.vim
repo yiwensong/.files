@@ -27,7 +27,13 @@ Plug 'mbbill/undotree'
 Plug 'nvie/vim-flake8'
 
 " ALE is useful for linting and completions
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
+
+" LSP for vim
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'mattn/vim-lsp-settings'
+" Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 " Backup theme for colored laptops
 Plug 'altercation/vim-colors-solarized'
@@ -474,22 +480,38 @@ set rtp+=~/.fzf
 let g:indentLine_enabled = 1
 nnoremap <Leader>i :IndentLinesToggle<CR>
 
+
+"---------------------------------------------------------------------------
+
+" vim-lsp Settings
+let g:lsp_document_code_action_signs_enabled = 0
+" nnoremap <leader>t :LspDefinition<CR>
+" nnoremap <leader>m :LspCodeAction<CR>
+" nnoremap <leader>d :LspHover<CR>
+" nnoremap <leader>n :LspNextDiagnostic<CR>
+" nnoremap <leader>p :LspPreviousDiagnostic<CR>
+
 "---------------------------------------------------------------------------
 
 " ALE Settings
+" " (TODO): probably kind of jank
+" autocmd BufNewFile,BufRead *.tsx set ft=typescript
+
 let g:ale_virtualenv_dir_names = ['virtualenv_run', 'venv', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', '.tox/py27', '.tox/py36', '$HOME/.local/venv']
 let g:ale_completion_enabled = 1
+" let g:ale_completion_autoimport = 1
 let g:ale_linters = {
 \   'go': ['gopls'],
 \   'ruby': ['sorbet-lsp'],
 \   'javascript': ['eslint', 'prettier'],
 \   'typescript': ['eslint', 'prettier', 'tsserver'],
+\   'typescriptreact': ['eslint', 'prettier', 'tsserver', 'typecheck'],
 \}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier'],
-\   'typescript': ['prettier'],
-\   'typescriptreact': ['prettier'],
+\   'javascript': ['eslint', 'prettier'],
+\   'typescript': ['eslint', 'prettier'],
+\   'typescriptreact': ['eslint', 'prettier', 'tslint', 'standard', 'remove_trailing_lines', 'trim_whitespace'],
 \   'markdown': ['prettier'],
 \   'markdown.mdx': ['prettier'],
 \   'less': ['prettier'],
@@ -499,10 +521,16 @@ let g:ale_fixers = {
 
 let g:ale_fix_on_save = 1
 
-let g:ale_javascript_prettier_executable = './node_modules/prettier/bin-prettier.js'
+" let g:ale_javascript_prettier_executable = './node_modules/prettier/bin-prettier.js'
+" let g:ale_javascript_eslint_executable = './node_modules/eslint/bin/eslint.js'
+" let g:ale_typescript_tsserver_executable = './node_modules/typescript/bin/tsserver'
 let g:ale_go_gopls_executable = '$GOPATH/bin/gopls'
 
 nnoremap <leader>t :ALEGoToDefinition<CR>
+nnoremap <leader>m :ALEImport<CR>
+nnoremap <leader>d :ALEDetail<CR>
+nnoremap <leader>n :ALENextWrap<CR>
+nnoremap <leader>p :ALEPreviousWrap<CR>
 
 " vim-illuminate settings
 hi illuminatedWord cterm=underline gui=underline

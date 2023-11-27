@@ -3,6 +3,7 @@
 # Make man pretty
 
 if status --is-interactive
+    status --file
     set -x LESS_TERMCAP_mb (printf "\e[01;31m")                 # Begins blinking.
     set -x LESS_TERMCAP_md (printf "\e[1;38;5;48m")             # Begins bold.
     set -x LESS_TERMCAP_me (printf "\e[0m")                     # Ends mode.

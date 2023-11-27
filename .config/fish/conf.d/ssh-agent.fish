@@ -1,4 +1,5 @@
 if status --is-login; and status --is-interactive; and test $IS_LOCAL -eq 1
+    status --file
     if test -z "$SSH_ENV"
         set -xg SSH_ENV $HOME/.ssh/environment
     end

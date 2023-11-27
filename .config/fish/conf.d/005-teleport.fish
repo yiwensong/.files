@@ -1,6 +1,4 @@
-# configs for airtable
 if status --is-login; and status --is-interactive
     status --file
-    # Activate nodeenv if needed
-    cdenv .
+    set fish_user_paths $HOME/h/bin $fish_user_paths
 end

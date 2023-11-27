@@ -1,4 +1,4 @@
 if status --is-login
     status --file
-    eval (/opt/homebrew/bin/brew shellenv)
+    set -gx PATH $HOME/h/cargo/bin $PATH
 end

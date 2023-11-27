@@ -3,6 +3,7 @@
 # but it's autowritten whenever the repo updates so we use this function
 # to deactivate nodeenv
 if status --is-login
+    status --file
     if type -q deactivate_node
         deactivate_node
     end

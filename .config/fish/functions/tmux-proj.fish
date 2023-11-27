@@ -1,6 +1,6 @@
 function tmux-proj --description 'starts a tmux session with sane defaults'
     set session_name $argv[1]
-    set session_path $HOME/stripe/$session_name
+    set session_path $HOME/code/$session_name
 
     if tmux ls | rg "$session_name"":"
         if test -z $TMUX

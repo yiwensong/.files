@@ -1,4 +1,5 @@
 if status --is-login; and status --is-interactive
+    status --file
     if test (uname -m) = "arm64"
         set pypath /opt/homebrew/bin
     else

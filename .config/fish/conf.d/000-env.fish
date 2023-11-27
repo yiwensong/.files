@@ -1,6 +1,8 @@
 # General environment variables
 
 if status --is-login
+    status --file
+
     if not test -d $HOME/.config
         mkdir $HOME/.config
     end
@@ -15,14 +17,13 @@ if status --is-login
     set EDITOR "nvim"
     # Uncomment this if you hate yourself
     # set EDITOR "emacs"
-    
+
     # clear the current path
     set -e fish_user_paths
 
     # Add stuff to your PATH
     set fish_user_paths $HOME/.local/bin $fish_user_paths
     set fish_user_paths /usr/lib/go-1.9/bin $fish_user_paths
-    set fish_user_paths $HOME/.venv/bin $fish_user_paths
     set fish_user_paths $GOPATH/bin $fish_user_paths
     set fish_user_paths $HOME/.cargo/bin $fish_user_paths
     set fish_user_paths $HOME/bin/.fzf/bin $fish_user_paths
@@ -35,6 +36,9 @@ if status --is-login
     if test (uname -m) = "arm64"
         set fish_user_paths /opt/homebrew/bin $fish_user_paths
     end
+
+    # default to $HOME venv version of python
+    set fish_user_paths $HOME/.venv/bin $fish_user_paths
 
     if not test -d $HOME/.local
         mdkir $HOME/.local

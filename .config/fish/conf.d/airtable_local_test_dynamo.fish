@@ -1,4 +1,6 @@
 if status --is-login
+    status --file
+
     # wait for docker to start, this happens at boot time.
     while not docker info > /dev/null
         sleep 1
@@ -6,6 +8,7 @@ if status --is-login
 
     set dynamo_dev $HOME/h/source/hyperbase/dynamodb/docker-compose.dev.yml
     set dynamo_test $HOME/h/source/hyperbase/dynamodb/docker-compose.test.yml
+    set localstack $HOME/h/source/hyperbase/localstack/docker-compose.dev.yml
 
-    docker compose --file $dynamo_dev --file $dynamo_test up --detach > /dev/null 2>&1
+    docker compose --file $dynamo_dev --file $dynamo_test --file $localstack up --detach > /dev/null 2>&1
 end
