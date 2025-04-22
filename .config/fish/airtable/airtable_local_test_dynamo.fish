@@ -1,6 +1,10 @@
 if status --is-login
     status --file
 
+    if test -n docker
+        return 0
+    end
+
     # wait for docker to start, this happens at boot time.
     while not docker info > /dev/null
         sleep 1

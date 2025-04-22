@@ -1,5 +1,6 @@
+# deprecated
 function cdenv -d "cd but it activates envs"
-    __autoenv $argv[1]
+    # __autoenv $argv[1]
     cd $argv[1]
 end
 

@@ -1,3 +1,4 @@
+    #   set user "$sbrgr"(whoami)"$snorm0
 # Abbreviations
 abbr --add g        'command grep -Pi --color=auto'
 abbr --add df       'df -h'
@@ -20,7 +21,7 @@ abbr --add python   'python3'
 abbr --add vim      'nvim'
 
 # cdenv is used to cd with automatic env update
-abbr --add cd       'cdenv'
+# abbr --add cd       'cdenv'
 
 set local_functions (dirname (status --current-filename))/abbr_local.fish
 if test -e $local_functions

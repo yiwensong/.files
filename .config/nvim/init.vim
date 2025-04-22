@@ -359,7 +359,10 @@ set visualbell
 set t_vb=
 
 " Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=0
+set notimeout
+set ttimeout
+" Idk what this line does, but it causes errors on linux nvim
+" set ttimeoutlen=0
 
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
@@ -607,3 +610,11 @@ augroup END
 "---------------------------------------------------------------------------
 " copy github links
 vmap <leader>g :GetCommitLink<cr>
+
+"---------------------------------------------------------------------------
+" vscode
+if exists('g:vscode')
+  nnoremap <silent> <leader>t <Cmd>call VSCodeCall('editor.action.revealDefinition')<CR>
+  nnoremap <silent> ^o <Cmd>call VSCodeCall('workbench.action.navigateBack')<CR>
+  nnoremap <silent> ^i <Cmd>call VSCodeCall('workbench.action.navigateForward')<CR>
+endif

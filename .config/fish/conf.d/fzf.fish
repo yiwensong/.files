@@ -5,6 +5,12 @@ if status --is-login; and status --is-interactive; and not type -q fzf
     ~/.fzf/install --key-bindings --completion --update-rc --no-zsh
 end
 
+if not type -q fzf_key_bindings
+    set keybindings (mktemp)
+    fzf --fish > $keybindings
+    source $keybindings
+end
+
 set FZF_DEFAULT_OPTS '--color=light'
 set FZF_DEFAULT_COMMAND 'fd --type file'
 set FZF_CTRL_T_COMMAND 'fd'

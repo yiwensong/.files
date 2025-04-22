@@ -14,7 +14,7 @@ if status --is-login
     set XDG_CONFIG_CACHE $HOME/.cache
 
     # Set default editor
-    set EDITOR "nvim"
+    set EDITOR (which nvim)
     # Uncomment this if you hate yourself
     # set EDITOR "emacs"
 

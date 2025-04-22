@@ -20,11 +20,12 @@ function fish_prompt
     #   end
     # end
 
-    if [ $IS_LOCAL = 1 ]
-      set user "$sbrgr"(whoami)"$snorm"
-    else
-      set user "$sbryl"(whoami)"$snorm"
-    end
+    # if test $islocal = 1
+    #   set user "$sbrgr"(whoami)"$snorm"
+    # else
+    #   set user "$sbryl"(whoami)"$snorm"
+    # end
+    set user "$sbrgr"(whoami)"$snorm"
     set host "$sbrwt"(hostname)"$snorm"
     set tstamp "$snorm"(date +%H:%M:%S)"$snorm"
     set path "$sbryl"(prompt_pwd)"$snorm"
