@@ -27,7 +27,7 @@ Plug 'mbbill/undotree'
 Plug 'nvie/vim-flake8'
 
 " ALE is useful for linting and completions
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 
 " LSP for vim
 " Plug 'prabirshrestha/vim-lsp'
@@ -365,7 +365,11 @@ set ttimeout
 " set ttimeoutlen=0
 
 " Use <F11> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F11>
+" set pastetoggle=<F11>
+
+" Don't conceal when you're looking at it
+set concealcursor=""
+set conceallevel=0
 
 "---------------------------------------------------------------------------
 
@@ -495,45 +499,56 @@ let g:lsp_document_code_action_signs_enabled = 0
 " nnoremap <leader>p :LspPreviousDiagnostic<CR>
 
 "---------------------------------------------------------------------------
+" vim-polyglot formatting
 
-" ALE Settings
-" " (TODO): probably kind of jank
-" autocmd BufNewFile,BufRead *.tsx set ft=typescript
+let g:polyglot_disabled = ['sensible']
 
-let g:ale_virtualenv_dir_names = ['virtualenv_run', 'venv', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', '.tox/py27', '.tox/py36', '$HOME/.local/venv']
-let g:ale_completion_enabled = 1
-" let g:ale_completion_autoimport = 1
-let g:ale_linters = {
-\   'go': ['gopls'],
-\   'ruby': ['sorbet-lsp'],
-\   'javascript': ['eslint', 'prettier'],
-\   'typescript': ['eslint', 'prettier', 'tsserver'],
-\   'typescriptreact': ['eslint', 'prettier', 'tsserver', 'typecheck'],
-\}
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint', 'prettier'],
-\   'typescript': ['eslint', 'prettier'],
-\   'typescriptreact': ['eslint', 'prettier', 'tslint', 'standard', 'remove_trailing_lines', 'trim_whitespace'],
-\   'markdown': ['prettier'],
-\   'markdown.mdx': ['prettier'],
-\   'less': ['prettier'],
-\   'json': ['prettier'],
-\   'yaml': ['prettier'],
-\}
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_new_list_item_indent = 0
 
-let g:ale_fix_on_save = 1
+"---------------------------------------------------------------------------
 
-" let g:ale_javascript_prettier_executable = './node_modules/prettier/bin-prettier.js'
-" let g:ale_javascript_eslint_executable = './node_modules/eslint/bin/eslint.js'
-" let g:ale_typescript_tsserver_executable = './node_modules/typescript/bin/tsserver'
-let g:ale_go_gopls_executable = '$GOPATH/bin/gopls'
+" " ALE Settings
+" " " (TODO): probably kind of jank
+" " autocmd BufNewFile,BufRead *.tsx set ft=typescript
 
-nnoremap <leader>t :ALEGoToDefinition<CR>
-nnoremap <leader>m :ALEImport<CR>
-nnoremap <leader>d :ALEDetail<CR>
-nnoremap <leader>n :ALENextWrap<CR>
-nnoremap <leader>p :ALEPreviousWrap<CR>
+" let g:ale_virtualenv_dir_names = ['virtualenv_run', 'venv', '.env', '.venv', 'env', 've-py3', 've', 'virtualenv', '.tox/py27', '.tox/py36', '$HOME/.local/venv']
+" let g:ale_completion_enabled = 1
+" " let g:ale_completion_autoimport = 1
+" let g:ale_linters = {
+" \   'go': ['gopls'],
+" \   'ruby': ['sorbet-lsp'],
+" \   'javascript': ['eslint', 'prettier'],
+" \   'typescript': ['eslint', 'prettier', 'tsserver'],
+" \   'typescriptreact': ['eslint', 'prettier', 'tsserver', 'typecheck'],
+" \}
+" let g:ale_fixers = {
+" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+" \   'javascript': ['eslint', 'prettier'],
+" \   'typescript': ['eslint', 'prettier'],
+" \   'typescriptreact': ['eslint', 'prettier', 'tslint', 'standard', 'remove_trailing_lines', 'trim_whitespace'],
+" \   'markdown': ['prettier'],
+" \   'markdown.mdx': ['prettier'],
+" \   'less': ['prettier'],
+" \   'json': ['prettier'],
+" \   'yaml': ['prettier'],
+" \}
+
+" let g:ale_fix_on_save = 1
+
+" " let g:ale_javascript_prettier_executable = './node_modules/prettier/bin-prettier.js'
+" " let g:ale_javascript_eslint_executable = './node_modules/eslint/bin/eslint.js'
+" " let g:ale_typescript_tsserver_executable = './node_modules/typescript/bin/tsserver'
+" let g:ale_go_gopls_executable = '$GOPATH/bin/gopls'
+
+" nnoremap <leader>t :ALEGoToDefinition<CR>
+" nnoremap <leader>m :ALEImport<CR>
+" nnoremap <leader>d :ALEDetail<CR>
+" nnoremap <leader>n :ALENextWrap<CR>
+" nnoremap <leader>p :ALEPreviousWrap<CR>
 
 " vim-illuminate settings
 hi illuminatedWord cterm=underline gui=underline
